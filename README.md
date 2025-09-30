@@ -29,11 +29,11 @@ MMFSeg with an RGB-Disparity fusion network that adopts CNN and Transformer as d
 
 # Datasets
 
-The **Pothole-600** dataset can be downloaded from [here](https://sites.google.com/view/pothole-600). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2023_itsc_cpkd/)
+The **Pothole-600** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/)
 
 
 # Pretrained weights
-The pretrained weights of MMFSeg for the two datasets can be downloaded from [here]().
+The pretrained weights of MMFSeg for the two datasets can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/).
 
 # Usage
 * Clone this repo
@@ -69,7 +69,18 @@ $ python3 run_demo_C2T_Conv0_Trans0_Pothole.py #If you want to reproduce the res
 ```
 The results will be saved in the `./C2T_Conv0_Trans0_Pothole` folder. 
 
-* To train MMFSeg. 
+* To train MMFSeg.
+
+During training, MMFSet first loads SegFormer's pre-trained weights, so you must first download these pre-trained weight files. They can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/).
+
+```
+$ cd ~/MMFSeg
+$ (download the pre-trained weight files in this folder)
+$ unzip -d . pretrained.zip
+$ (Now, you can get a folder named pretrained)
+```
+Then you need to build a docker container to run the trianing file.
+
 ```
 $ (You should be in the MMFSeg folder)
 $ docker run -it --shm-size 8G -p 1234:6006 --name docker_container_MMFSeg --gpus all -v ~/MMFSeg:/workspace docker_image_MMFSeg
@@ -77,6 +88,8 @@ $ (currently, you should be in the docker)
 $ cd /workspace
 $ python3 train_C2T_NA_Conv0_Trans0.py
 ```
+
+The train_C2T_NA_Conv0_Trans0.py file defaults to training MMFSeg using the Pothole-600 dataset. If you want to train MMFSeg using the NO-4K dataset, you need to change the `data_dir` parameter in the `train_C2T_NA_Conv0_Trans0.py` file to `NO4K` and adjust the `C.image_height` and `C.image_width` parameters in the `config.py` file, which represent the image resolution.
 
 
 
