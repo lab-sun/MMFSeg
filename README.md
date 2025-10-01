@@ -29,12 +29,13 @@ MMFSeg with an RGB-Disparity fusion network that adopts CNN and Transformer as d
 
 # Datasets
 
-The **Pothole-600** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/Pothole-600.zip). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/)
+The **Pothole-600** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/Pothole-600.zip). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/NO4K.zip)
 
 
 # Pretrained weights
-The pretrained weights of MMFSeg for the two datasets can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/).
+The pretrained weight file for Pothole dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/checkpoints/MMFSeg-Pothole-600.pth).
 
+The pretrained weight file for NO-4K dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/checkpoints/MMFSeg-NO4K.pth).
 # Usage
 * Clone this repo
 ```
@@ -71,7 +72,7 @@ The results will be saved in the `./C2T_Conv0_Trans0_Pothole` folder.
 
 * To train MMFSeg.
 
-During training, MMFSet first loads SegFormer's pre-trained weights, so you must first download these pre-trained weight files. They can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/).
+During training, MMFSet first loads SegFormer's pre-trained weights, so you must first download these pre-trained weight files. They can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/pretrained.zip).
 
 ```
 $ cd ~/MMFSeg
