@@ -29,7 +29,7 @@ MMFSeg with an RGB-Disparity fusion network that adopts CNN and Transformer as d
 
 # Datasets
 
-The **Pothole-600** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/)
+The **Pothole-600** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/Pothole-600.zip). The **NO-4K** dataset can be downloaded from [here](https://nas.labsun.org/downloads/2025_tase_mmfseg/)
 
 
 # Pretrained weights
